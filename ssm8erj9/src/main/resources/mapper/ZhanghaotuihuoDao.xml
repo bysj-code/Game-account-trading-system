@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZhanghaotuihuoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZhanghaotuihuoEntity" id="zhanghaotuihuoMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="youximingcheng" column="youximingcheng"/>
+        <result property="youxileibie" column="youxileibie"/>
+        <result property="zhanghaomingcheng" column="zhanghaomingcheng"/>
+        <result property="chushoujiage" column="chushoujiage"/>
+        <result property="maijiazhanghao" column="maijiazhanghao"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="maijiayouxiang" column="maijiayouxiang"/>
+        <result property="tuihuoshuoming" column="tuihuoshuoming"/>
+        <result property="tuihuoshijian" column="tuihuoshijian"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="shouji" column="shouji"/>
+        <result property="youxiang" column="youxiang"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZhanghaotuihuoVO" >
+		SELECT * FROM zhanghaotuihuo  zhanghaotuihuo         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZhanghaotuihuoVO" >
+		SELECT  zhanghaotuihuo.* FROM zhanghaotuihuo  zhanghaotuihuo
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZhanghaotuihuoView" >
+
+		SELECT  zhanghaotuihuo.* FROM zhanghaotuihuo  zhanghaotuihuo 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZhanghaotuihuoView" >
+		SELECT * FROM zhanghaotuihuo  zhanghaotuihuo <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
